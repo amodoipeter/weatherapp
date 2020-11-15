@@ -18,3 +18,11 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom|end"
+        android:paddingRight="12dp"
+        android:text="°F"
+        android:textColor="@color/white"
+        android:textSize="20sp"/>
