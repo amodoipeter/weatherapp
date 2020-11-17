@@ -1,6 +1,8 @@
 package com.moringaschool.weatherapp;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -41,5 +43,23 @@ public class WeatherActivity extends AppCompatActivity {
         locationField = findViewById(R.id.location_field);
         fab = findViewById(R.id.fab);
 
+        locationField.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                count = s.toString().trim().length();
+                fab.setImageResource(count == 0 ? R.drawable.ic_refresh: R.drawable.ic_search);
+                texCount = count;
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 }
