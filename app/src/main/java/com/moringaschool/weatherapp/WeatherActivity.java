@@ -61,5 +61,17 @@ public class WeatherActivity extends AppCompatActivity {
 
             }
         });
+
+        fab.setOnClickListener(v -> {
+            if (textCount == 0) {
+                refreshWeather();
+            } else {
+                searchForWeather(locationField.getText().toString());
+                locationField.setText("");
+            }
+        });
+
+        searchForWeather(currentLocation);
     }
+
 }
