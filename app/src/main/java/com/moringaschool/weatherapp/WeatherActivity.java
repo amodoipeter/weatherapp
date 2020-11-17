@@ -8,7 +8,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -70,8 +72,52 @@ public class WeatherActivity extends AppCompatActivity {
                 locationField.setText("");
             }
         });
+    }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        currentWeatherService.cancel();
+    }
+
+    private void refreshWeather() {
+        if (fetchingWeather) {
+            return;
+        }
         searchForWeather(currentLocation);
     }
 
+    private void searchForWeather(@NonNull final String location) {
+        toggleProgress(true);
+        fetchingWeather = true;
+        currentWeatherService.getCurrentWeather(location, currentWeatherCallback);
+    }
+
+    private void toggleProgress(final boolean showProgress) {
+        weatherContainer.setVisibility(showProgress ? View.GONE : View.VISIBLE);
+        weatherProgressBar.setVisibility(showProgress ? View.VISIBLE : View.GONE);
+    }
+
+    private final CurrentWeatherCallback currentWeatherCallback = new CurrentWeatherCallback() {
+
+        @Override
+        public void onCurrentWeather(@NonNull CurrentWeather currentWeather) {
+            currentLocation = currentWeather.location;
+            temperature.setText(String.valueOf(currentWeather.getTempFahrenheit()));
+            location.setText(currentWeather.location);
+            weatherCondition.setText(currentWeather.weatherCondition);
+            weatherConditionIcon.setImageResource(CurrentWeatherUtils.getWeatherIconResId
+                    (currentWeather.conditionId));
+            toggleProgress(false);
+            fetchingWeather = false;
+        }
+
+        @Override
+        public void onError(@Nullable Exception exception) {
+            toggleProgress(false);
+            fetchingWeather = false;
+            Toast.makeText(WeatherActivity.this, "There was an error fetching weather, " +
+                    "try again.", Toast.LENGTH_SHORT).show();
+        }
+    };
 }
