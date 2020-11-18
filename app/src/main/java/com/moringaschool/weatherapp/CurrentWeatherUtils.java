@@ -2,6 +2,9 @@ package com.moringaschool.weatherapp;
 
 import androidx.annotation.DrawableRes;
 
+/**
+ * @author moringa
+ */
 public class CurrentWeatherUtils {
         @DrawableRes
         public static int getWeatherIconResId(final int weatherConditionId) {

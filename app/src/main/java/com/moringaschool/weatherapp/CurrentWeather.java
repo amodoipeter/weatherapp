@@ -1,7 +1,5 @@
 package com.moringaschool.weatherapp;
 
-public class CurrentWeather {
-
     public class CurrentWeather {
         final String location;
         final int conditionId;
