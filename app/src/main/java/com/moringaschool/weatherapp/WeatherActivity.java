@@ -47,7 +47,7 @@ public class WeatherActivity extends AppCompatActivity {
 
         locationField.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            public void beforeTextChanged(CharSequence s, int starthttps://encycolorpedia.com/432e5e, int count, int after) {
 
             }
 
