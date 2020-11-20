@@ -1,5 +1,8 @@
 package com.moringaschool.weatherapp;
 
+    /**
+     * @author moringa
+     */
     public class CurrentWeather {
         final String location;
         final int conditionId;

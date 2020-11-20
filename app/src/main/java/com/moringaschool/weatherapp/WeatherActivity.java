@@ -20,12 +20,12 @@ public class WeatherActivity extends AppCompatActivity {
     private CurrentWeatherService currentWeatherService;
     private View weatherContainer;
     private ProgressBar weatherProgressBar;
-    private TextView temparature, location, weatherCondition;
+    private TextView temperature, location, weatherCondition;
     private ImageView weatherConditionIcon;
     private EditText locationField;
     private FloatingActionButton fab;
 
-    private int texCount = 0
+    private int textCount = 0;
     private boolean fetchingWeather = false;
     private String currentLocation = "Nairobi";
 
@@ -38,7 +38,7 @@ public class WeatherActivity extends AppCompatActivity {
 
         weatherContainer = findViewById(R.id.weather_container);
         weatherProgressBar = findViewById(R.id.weather_progress_bar);
-        temparature = findViewById(R.id.temperature);
+        temperature = findViewById(R.id.temperature);
         location = findViewById(R.id.location);
         weatherCondition = findViewById(R.id.weather_condition);
         weatherConditionIcon = findViewById(R.id.weather_condition_icon);
@@ -47,15 +47,15 @@ public class WeatherActivity extends AppCompatActivity {
 
         locationField.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int starthttps://encycolorpedia.com/432e5e, int count, int after) {
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 count = s.toString().trim().length();
-                fab.setImageResource(count == 0 ? R.drawable.ic_refresh: R.drawable.ic_search);
-                texCount = count;
+                fab.setImageResource(count == 0 ? R.drawable.ic_refresh : R.drawable.ic_search);
+                textCount = count;
             }
 
             @Override
@@ -98,7 +98,7 @@ public class WeatherActivity extends AppCompatActivity {
         weatherProgressBar.setVisibility(showProgress ? View.VISIBLE : View.GONE);
     }
 
-    private final CurrentWeatherCallback currentWeatherCallback = new CurrentWeatherCallback() {
+    private final CurrentWeatherService.CurrentWeatherCallback currentWeatherCallback = new CurrentWeatherService.CurrentWeatherCallback() {
 
         @Override
         public void onCurrentWeather(@NonNull CurrentWeather currentWeather) {
