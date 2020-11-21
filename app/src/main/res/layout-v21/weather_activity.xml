@@ -58,7 +58,7 @@
             android:id="@+id/weather_condition_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_wi_day_sunny"/>
+            app:srcCompat="@drawable/ic_wi_day_sunny"/>
 
         </LinearLayout>
 
@@ -84,15 +84,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".75"
+                android:autofillHints=""
                 android:backgroundTint="@color/white"
                 android:hint="@string/enter_your_location"
                 android:maxLines="1"
                 android:singleLine="true"
                 android:textColor="@color/white"
                 android:textColorHint="@color/transparentWhite"
-                android:textSize="18sp"
-                android:autofillHints=""
-                android:inputType="TODO" />
+                android:textSize="18sp" />
             </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton
