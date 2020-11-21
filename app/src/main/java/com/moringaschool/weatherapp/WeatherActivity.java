@@ -16,6 +16,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+/**
+ * @author moringa
+ */
 public class WeatherActivity extends AppCompatActivity {
     private CurrentWeatherService currentWeatherService;
     private View weatherContainer;
