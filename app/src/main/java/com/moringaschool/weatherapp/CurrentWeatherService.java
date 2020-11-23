@@ -16,6 +16,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
+/**
+ * @author moringa
+ */
 public class CurrentWeatherService {
 
         private static final String TAG = CurrentWeatherService.class.getSimpleName();
