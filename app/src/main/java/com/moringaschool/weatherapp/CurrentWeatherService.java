@@ -15,9 +15,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-
 /**
- * @author moringa
+ * Not an actual {@inheritDoc android.app.Service} because we are using {@link Volley}
  */
 public class CurrentWeatherService {
 
@@ -44,22 +43,19 @@ public class CurrentWeatherService {
         public void getCurrentWeather(@androidx.annotation.NonNull final String locationName, @androidx.annotation.NonNull final CurrentWeatherCallback callback) {
                 final String url = String.format("%s?q=%s&appId=%s", URL, locationName, API_KEY);
                 StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                        new Response.Listener<String>() {
-                                @Override
-                                public void onResponse(String response) {
-                                        try {
-                                                final JSONObject currentWeatherJSONObject = new JSONObject(response);
-                                                final JSONArray weather = currentWeatherJSONObject.getJSONArray("weather");
-                                                final JSONObject weatherCondition = weather.getJSONObject(0);
-                                                final String locationName1 = currentWeatherJSONObject.getString("name");
-                                                final int conditionId = weatherCondition.getInt("id");
-                                                final String conditionName = weatherCondition.getString("main");
-                                                final double tempKelvin = currentWeatherJSONObject.getJSONObject("main").getDouble("temp");
-                                                final CurrentWeather currentWeather = new CurrentWeather(locationName1, conditionId, conditionName, tempKelvin);
-                                                callback.onCurrentWeather(currentWeather);
-                                        } catch (JSONException e) {
-                                                callback.onError(e);
-                                        }
+                        response -> {
+                                try {
+                                        final JSONObject currentWeatherJSONObject = new JSONObject(response);
+                                        final JSONArray weather = currentWeatherJSONObject.getJSONArray("weather");
+                                        final JSONObject weatherCondition = weather.getJSONObject(0);
+                                        final String locationName1 = currentWeatherJSONObject.getString("name");
+                                        final int conditionId = weatherCondition.getInt("id");
+                                        final String conditionName = weatherCondition.getString("main");
+                                        final double tempKelvin = currentWeatherJSONObject.getJSONObject("main").getDouble("temp");
+                                        final CurrentWeather currentWeather = new CurrentWeather(locationName1, conditionId, conditionName, tempKelvin);
+                                        callback.onCurrentWeather(currentWeather);
+                                } catch (JSONException e) {
+                                        callback.onError(e);
                                 }
                         }, callback::onError);
                 stringRequest.setTag(CURRENT_WEATHER_TAG);
