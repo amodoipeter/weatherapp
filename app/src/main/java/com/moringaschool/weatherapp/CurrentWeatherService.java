@@ -22,7 +22,7 @@ public class CurrentWeatherService {
 
         private static final String URL = "https://api.openweathermap.org/data/2.5/weather";
         private static final String CURRENT_WEATHER_TAG = "CURRENT_WEATHER";
-        private static final String API_KEY = "";
+        private static final String API_KEY = "7e2b318ebd705d6a26737aba46a66355\n";
 
         private final RequestQueue queue;
 
