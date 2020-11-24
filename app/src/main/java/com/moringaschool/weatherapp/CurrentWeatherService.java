@@ -16,7 +16,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * Not an actual {@inheritDoc android.app.Service} because we are using {@link Volley}
+ * Not an actual {@link android.app.Service} because we are using {@link Volley}
  */
 public class CurrentWeatherService {
 

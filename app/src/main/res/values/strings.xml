@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">weatherapp</string>
-    <string name="enter_your_location">Enter your location...</string>
+    <string name="weather_hint">Enter your location…</string>
+    <string name="f">°F</string>
+    <string name="_21">21</string>
+    <string name="nairobi">Nairobi</string>
+    <string name="sunny">Sunny</string>
+    <string name="todo">TODO</string>
 </resources>

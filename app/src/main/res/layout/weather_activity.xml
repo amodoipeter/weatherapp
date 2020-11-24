@@ -22,8 +22,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="bottom|end"
-        android:paddingRight="12dp"
-        android:text="°F"
+        android:paddingEnd="12dp"
+        android:text="@string/f"
         android:textColor="@color/white"
         android:textSize="20sp"/>
 
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="-36dp"
         android:gravity="center_horizontal"
-        android:text="21"
+        android:text="@string/_21"
         android:textColor="@color/white"
         android:textSize="70sp"/>
 
@@ -41,7 +41,7 @@
             android:id="@+id/location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nairobi"
+            android:text="@string/nairobi"
             android:textColor="@color/white"
             android:textSize="35sp"/>
 
@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="Sunny"
+            android:text="@string/sunny"
             android:textColor="@color/white"
             android:textSize="20sp"/>
 
@@ -58,7 +58,8 @@
             android:id="@+id/weather_condition_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_wi_day_sunny"/>
+            app:srcCompat="@drawable/ic_wi_day_sunny"
+            android:contentDescription="@string/todo" />
 
         </LinearLayout>
 
@@ -90,17 +91,18 @@
                 android:singleLine="true"
                 android:textColor="@color/white"
                 android:textColorHint="@color/transparentWhite"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:autofillHints="" />
             </LinearLayout>
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="16dp"
-        android:contentDescription="TODO"
-        android:src="@drawable/ic_refresh"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/ic_launcher_foreground"
         app:fabSize="normal" />
 
 </FrameLayout>
