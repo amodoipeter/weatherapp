@@ -11,4 +11,9 @@
     <color name="colorPrimaryDark">#D32F2F</color>
     <color name="colorAccent">#FFA726</color>
     <color name="transparentWhite">#B3FFFFFF</color>
+    <color name="colorDivider">#B6B6B6</color>
+    <color name="colorPrimaryLight">#FFCCBC</color>
+    <color name="colorPrimaryText">#1F1E1E</color>
+    <color name="colorTextIcons">#FFFFFF</color>
+
 </resources>
