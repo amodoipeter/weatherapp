@@ -15,14 +15,19 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
-    <string name="password">Password</string>
     <string name="log_in">Log in</string>
     <string name="login">Login</string>
     <string name="don_t_have_an_account_sign_up_here">Don\'t have an account? Sign up here!</string>
-    <string name="email">Email</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="create_account">Create Account</string>
     <string name="sign_up">Sign up</string>
     <string name="name">Name</string>
     <string name="already_have_an_account_log_in_here">Already have an account? Log in here!</string>
+    <string name="not_registered_sign_up_here">Not registered? Sign Up here</string>
+    <string name="sign_in">Sign In</string>
+    <string name="welcome_you_are_logged_in">Welcome! You are logged in</string>
+    <string name="logout">Logout</string>
+    <string name="already_have_an_account_sign_in_here">Already have an account? Sign in here</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
 </resources>
