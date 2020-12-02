@@ -1,9 +1,18 @@
 # weatherapp
 
-##Author Amodoi Peter
+##Author
+ 
+Amodoi Peter
 
 ### Overview
 This is an Android weather application built with open weather map API.
+
+## Technologies Used
+1. Android
+2.figma(https://www.figma.com/file/FAOEtMBMT15oZsB72w8dGd/Untitled?node-id=0%3A1)
+3. java
+4. Android Studio
+
 
 ### Setup Steps
 1. Download or clone this project
