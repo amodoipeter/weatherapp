@@ -22,7 +22,7 @@ This is an Android weather application built with open weather map API.
 2. Import into Android Studio
 3. Create a Open Weather Map API account [here](https://home.openweathermap.org/users/sign_up) if you don't have one
 4. Create an Open Weather Map API key and add it to the project inside of the file CurrentWeatherService.java replace the API_KEY static variable value with your API key
-s. the mapping from weather icon to Open Weather Map API condition id found in https://erikflowers.github.io/weather-icons/api-list.html
+s. The mapping from weather icon to Open Weather Map API condition id found in https://erikflowers.github.io/weather-icons/api-list.html
 6. weather icons https://erikflowers.github.io/weather-icons/
 
 ```
