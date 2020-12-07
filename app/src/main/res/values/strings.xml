@@ -30,4 +30,6 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="logout">Logout</string>
+    <string name="the_weather_app">THE WEATHER APP</string>
+    <string name="welcome_to">WELCOME TO</string>
 </resources>
